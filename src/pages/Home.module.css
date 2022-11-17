@@ -1,0 +1,17 @@
+.container {
+  height: 93.85vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('../img/landingPageBackground.jpg') no-repeat center center/cover;
+}
+
+.container a {
+  padding: 1rem 4rem;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
