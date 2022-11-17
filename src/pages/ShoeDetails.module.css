@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 86vh;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.container img {
+  width: 600px;
+  height: 800px;
+  object-fit: cover;
+}
+
+.info {
+  width: 600px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.info p {
+  width: 200px;
+}
+
+.info .btns {
+  text-align: center;
+}
+
+.info .btns button {
+  padding: .5rem 2rem;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  font-size: 1rem;
+  margin-right: 50px;
+}

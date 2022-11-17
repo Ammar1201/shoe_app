@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import Header from './components/Header';
 import AddShoe from './pages/AddShoe';
 import Home from './pages/Home';
-import Shoe from './pages/Shoe';
+import ShoeDetails from './pages/ShoeDetails';
 import Shoes from './pages/Shoes';
 
 const App = () => {
@@ -18,7 +18,7 @@ const App = () => {
           <Shoes />
         </Route>
         <Route path='/shoes/:shoeID'>
-          <Shoe />
+          <ShoeDetails />
         </Route>
         <Route path='/shoes/add'>
           <AddShoe />

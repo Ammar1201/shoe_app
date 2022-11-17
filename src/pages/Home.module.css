@@ -2,9 +2,15 @@
   height: 93.85vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background: url('../assets/img/landingPageBackground.jpg') no-repeat center center/cover;
+}
+
+.container h1 {
+  color: white;
+  font-size: 4rem;
 }
 
 .container a {

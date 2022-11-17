@@ -13,6 +13,17 @@ export const getShoes = async () => {
   }
 }
 
+export const getShoe = async (id) => {
+  try {
+    const res = await axios.get(baseUrl + id);
+    const { data } = res;
+    return data;
+  }
+  catch (error) {
+    console.log(error);
+  }
+}
+
 export const addShoe = async () => {
   try {
 

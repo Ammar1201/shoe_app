@@ -7,12 +7,11 @@ const Shoes = () => {
   const [shoes, setShoes] = useState([]);
 
   useEffect(() => {
-    const data = async () => {
+    const getShoesData = async () => {
       const shoesData = await getShoes();
-      console.log(shoesData);
       setShoes(shoesData);
     };
-    data();
+    getShoesData();
   }, []);
 
 
