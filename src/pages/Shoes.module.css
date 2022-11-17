@@ -1,0 +1,16 @@
+.container {
+  height: 93.85vh;
+  width: 100%;
+  background: url('../assets/img/landingPageBackground.jpg') no-repeat center center/cover;
+}
+
+.container h1 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.shoesContainer {
+  display: flex;
+  gap: 6rem;
+  flex-wrap: wrap;
+}

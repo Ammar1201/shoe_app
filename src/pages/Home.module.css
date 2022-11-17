@@ -4,7 +4,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: url('../img/landingPageBackground.jpg') no-repeat center center/cover;
+  background: url('../assets/img/landingPageBackground.jpg') no-repeat center center/cover;
 }
 
 .container a {
