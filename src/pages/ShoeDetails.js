@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getShoe } from '../api';
+import EditShoe from '../components/utils/EditShoe';
 import classes from './ShoeDetails.module.css';
 
 // const shoe = {
@@ -14,6 +15,7 @@ import classes from './ShoeDetails.module.css';
 const Shoe = ({setIsLoading}) => {
   const { shoeID } = useParams();
   const [shoe, setShoe] = useState(null);
+  const [editShoe, setEditShoe] = useState(false);
 
   useEffect(() => {
     const getShoeData = async () => {
@@ -25,14 +27,16 @@ const Shoe = ({setIsLoading}) => {
     getShoeData();
   }, [shoeID, setIsLoading]);
 
-  const editHandler = () => {};
+  const editHandler = () => {
+    setEditShoe(true);
+  };
 
   const deleteHandler = () => {};
 
   return ( 
     <div>
-      <h1 style={{textAlign: 'center'}}>Shoe Details</h1>
-      {shoe && <div className={classes.container}>
+      {!editShoe && <h1 style={{textAlign: 'center'}}>Shoe Details</h1>}
+      {shoe && !editShoe && <div className={classes.container}>
         <div>
           <img src={shoe.picture} alt="shoe" />
         </div>
@@ -46,6 +50,7 @@ const Shoe = ({setIsLoading}) => {
           </div>
         </div> 
       </div>}
+      {shoe && editShoe && <EditShoe shoe={shoe} setShoe={setShoe} setEditShoe={setEditShoe} setIsLoading={setIsLoading} />}
     </div> 
   );
 }

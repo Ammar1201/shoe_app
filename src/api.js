@@ -33,9 +33,16 @@ export const addShoe = async () => {
   }
 }
 
-export const updateShoe = async () => {
+export const updateShoe = async (toUpdateId, shoe) => {
   try {
-
+    const res = await axios({
+      method: 'put',
+      url: `${baseUrl}${toUpdateId}`,
+      data: {
+        ...shoe
+      }
+    })
+    return res.data;
   }
   catch (error) {
     console.log(error);
