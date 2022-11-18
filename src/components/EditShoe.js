@@ -14,10 +14,14 @@ const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage, setTitl
       name: name.value,
       picture: picture.value,
       price: price.value,
-      description: description.value || 'No description'
+      description: description.value || 'No description!'
     };
     setIsLoading(true);
     const update = await updateShoeReq(shoe.id, updatedShoe);
+    if(update === null) {
+      setMessage('something went wrong!');
+      return;
+    }
     setShoe(update);
     setIsLoading(false);
     setEditShoe(false);

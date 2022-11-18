@@ -24,9 +24,16 @@ export const getShoeReq = async (id) => {
   }
 }
 
-export const addShoeReq = async () => {
+export const addShoeReq = async (shoe) => {
   try {
-
+    const res = await axios({
+      method: 'post',
+      url: baseUrl,
+      data: {
+        ...shoe
+      }
+    })
+    return res.data;
   }
   catch (error) {
     console.log(error);

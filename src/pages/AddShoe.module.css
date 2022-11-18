@@ -1,0 +1,46 @@
+.test {
+  text-align: center;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  width: 400px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  border: 10px solid black
+}
+
+.form input {
+  width: 300px;
+  height: 30px;
+  border-radius: 5px;
+}
+
+.form input[type='submit'] {
+  padding: 1rem 2rem;
+  background: black;
+  color: white;
+  border-radius: 20px;
+  font-size: 1.5rem;
+  height: auto;
+}
+
+.form textarea {
+  width: 300px;
+  height: 150px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+}

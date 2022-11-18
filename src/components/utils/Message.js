@@ -1,13 +1,6 @@
 import classes from './Message.module.css';
 
 const Message = ({messageContent, title, setMessage}) => {
-  // return ( 
-  //   <div className={classes.messageContainer}>
-  //     <div className={classes.messageBody}>
-  //       <h1>{messageContent}</h1>
-  //     </div>
-  //   </div> 
-  // );
   return <div>
   <div className={classes.backdrop}></div>
   <div className={`${classes.card} ${classes.modal}`}>
