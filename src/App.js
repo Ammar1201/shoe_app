@@ -17,11 +17,11 @@ const App = () => {
         <Route path='/shoes' exact>
           <Shoes />
         </Route>
+        <Route path='/shoes/add' exact>
+          <AddShoe />
+        </Route>
         <Route path='/shoes/:shoeID'>
           <ShoeDetails />
-        </Route>
-        <Route path='/shoes/add'>
-          <AddShoe />
         </Route>
       </Switch>
     </Fragment>

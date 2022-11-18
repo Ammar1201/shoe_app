@@ -12,6 +12,9 @@ const Header = () => {
           <li>
             <NavLink activeClassName={classes.active} to='/shoes'>Shoes</NavLink>
           </li>
+          <li>
+            <NavLink activeClassName={classes.active} to='/shoes/add'>Add Shoe</NavLink>
+          </li>
         </ul>
       </nav>
     </header>

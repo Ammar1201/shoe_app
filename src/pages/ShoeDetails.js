@@ -16,10 +16,8 @@ const Shoe = () => {
   const [shoe, setShoe] = useState(null);
 
   useEffect(() => {
-    console.log('useEffect');
     const getShoeData = async () => {
       const data = await getShoe(shoeID);
-      console.log(data);
       setShoe(data);
     };
     getShoeData();
@@ -28,7 +26,7 @@ const Shoe = () => {
   return ( 
     <div>
       <h1 style={{textAlign: 'center'}}>Shoe</h1>
-      <div className={classes.container}>
+      {shoe && <div className={classes.container}>
         <div>
           <img src={shoe.picture} alt="shoe" />
         </div>
@@ -41,7 +39,7 @@ const Shoe = () => {
             <button>Delete</button>
           </div>
         </div> 
-      </div>
+      </div>}
     </div> 
   );
 }
