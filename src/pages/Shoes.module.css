@@ -1,6 +1,4 @@
 .container {
-  /* height: 93.85vh; */
-  /* height: fit-content; */
   min-height: 93.85vh;
   width: 100%;
   background: url('../assets/img/landingPageBackground.jpg') no-repeat center center/cover;
@@ -15,4 +13,41 @@
   display: flex;
   gap: 6rem;
   flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .container {
+    background: #444;
+  }
+
+  .shoesContainer {
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1025px) {
+  .container {
+    margin: auto;
+    text-align: center;
+  }
+
+  .shoesContainer {
+    flex-direction: row;
+    gap: 10rem;
+  }
+}
+
+@media (min-width: 1026px) and (max-width: 1441px) {
+  .container {
+    margin: auto;
+    text-align: center;
+  }
+
+  .shoesContainer {
+    flex-direction: row;
+    gap: 5rem;
+  }
 }

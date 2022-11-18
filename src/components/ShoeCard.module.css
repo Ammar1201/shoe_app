@@ -1,6 +1,6 @@
 .card {
   width: 400px;
-  height: 500px;
+  min-height: 550px;
   border: 1px solid black;
   margin-left: 20px;
   text-align: center;
@@ -27,4 +27,12 @@
 .card p {
   margin: auto;
   width: 350px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    width: 380px;
+    height: 550px;
+    margin-right: 20px;
+  }
 }
