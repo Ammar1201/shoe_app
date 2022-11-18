@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getShoe } from '../api';
-import EditShoe from '../components/utils/EditShoe';
+import EditShoe from '../components/EditShoe';
 import classes from './ShoeDetails.module.css';
 
 // const shoe = {

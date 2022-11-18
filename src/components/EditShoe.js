@@ -1,4 +1,4 @@
-import { updateShoe } from '../../api';
+import { updateShoe } from '../api';
 import classes from './EditShoe.module.css';
 
 const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading}) => {
