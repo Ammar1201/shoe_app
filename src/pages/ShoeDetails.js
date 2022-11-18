@@ -11,21 +11,27 @@ import classes from './ShoeDetails.module.css';
 //   id: "1"
 // }
 
-const Shoe = () => {
+const Shoe = ({setIsLoading}) => {
   const { shoeID } = useParams();
   const [shoe, setShoe] = useState(null);
 
   useEffect(() => {
     const getShoeData = async () => {
+      setIsLoading(true);
       const data = await getShoe(shoeID);
       setShoe(data);
+      setIsLoading(false);
     };
     getShoeData();
-  }, [shoeID]);
+  }, [shoeID, setIsLoading]);
+
+  const editHandler = () => {};
+
+  const deleteHandler = () => {};
 
   return ( 
     <div>
-      <h1 style={{textAlign: 'center'}}>Shoe</h1>
+      <h1 style={{textAlign: 'center'}}>Shoe Details</h1>
       {shoe && <div className={classes.container}>
         <div>
           <img src={shoe.picture} alt="shoe" />
@@ -35,8 +41,8 @@ const Shoe = () => {
           <p>{shoe.description}</p>
           <h4>{shoe.price}$</h4>
           <div className={classes.btns}>
-            <button>Edit</button>
-            <button>Delete</button>
+            <button onClick={editHandler}>Edit</button>
+            <button onClick={deleteHandler}>Delete</button>
           </div>
         </div> 
       </div>}
