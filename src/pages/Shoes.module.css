@@ -1,6 +1,7 @@
 .container {
   /* height: 93.85vh; */
-  height: fit-content;
+  /* height: fit-content; */
+  min-height: 93.85vh;
   width: 100%;
   background: url('../assets/img/landingPageBackground.jpg') no-repeat center center/cover;
 }

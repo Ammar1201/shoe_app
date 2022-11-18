@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { getShoe } from '../api';
+import { useParams, Route, Redirect } from 'react-router-dom';
+import { getShoeReq, deleteShoeReq } from '../api';
 import EditShoe from '../components/EditShoe';
 import classes from './ShoeDetails.module.css';
 
@@ -12,15 +12,16 @@ import classes from './ShoeDetails.module.css';
 //   id: "1"
 // }
 
-const Shoe = ({setIsLoading, setMessage}) => {
+const Shoe = ({setIsLoading, setMessage, setTitle}) => {
   const { shoeID } = useParams();
   const [shoe, setShoe] = useState(null);
   const [editShoe, setEditShoe] = useState(false);
+  const [deleteShoe, setDeleteShoe] = useState(false);
 
   useEffect(() => {
     const getShoeData = async () => {
       setIsLoading(true);
-      const data = await getShoe(shoeID);
+      const data = await getShoeReq(shoeID);
       setShoe(data);
       setIsLoading(false);
     };
@@ -31,7 +32,18 @@ const Shoe = ({setIsLoading, setMessage}) => {
     setEditShoe(true);
   };
 
-  const deleteHandler = () => {};
+  const deleteHandler = async () => {
+    setIsLoading(true);
+    const data = await deleteShoeReq(shoeID);
+    if(data === null) {
+      setMessage('something went wrong!');
+      return;
+    }
+    setIsLoading(false);
+    setDeleteShoe(true);
+    setTitle('Success!');
+    setMessage('Shoe Deleted Successfully!');
+  };
 
   return ( 
     <div>
@@ -50,7 +62,8 @@ const Shoe = ({setIsLoading, setMessage}) => {
           </div>
         </div> 
       </div>}
-      {shoe && editShoe && <EditShoe shoe={shoe} setShoe={setShoe} setEditShoe={setEditShoe} setIsLoading={setIsLoading} setMessage={setMessage} />}
+      {shoe && editShoe && <EditShoe shoe={shoe} setShoe={setShoe} setEditShoe={setEditShoe} setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle} />}
+      {deleteShoe && <Route><Redirect to='/shoes' /></Route>}
     </div> 
   );
 }

@@ -1,6 +1,6 @@
 import classes from './Message.module.css';
 
-const Message = ({messageContent, setMessage}) => {
+const Message = ({messageContent, title, setMessage}) => {
   // return ( 
   //   <div className={classes.messageContainer}>
   //     <div className={classes.messageBody}>
@@ -12,7 +12,7 @@ const Message = ({messageContent, setMessage}) => {
   <div className={classes.backdrop}></div>
   <div className={`${classes.card} ${classes.modal}`}>
     <header className={classes.header}>
-      <h2>Invalid Input</h2>
+      <h2>{title}</h2>
     </header>
     <div className={classes.content}>
       <p>{messageContent}</p>

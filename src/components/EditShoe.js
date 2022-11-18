@@ -1,12 +1,13 @@
-import { updateShoe } from '../api';
+import { updateShoeReq } from '../api';
 import classes from './EditShoe.module.css';
 
-const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage}) => {
+const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage, setTitle}) => {
   const editHandler = async (event) => {
     event.preventDefault();
     const { name, picture, price, description } = event.target.elements;
     if(!name.value.trim() || !picture.value.trim() || !price.value.trim()) {
-      setMessage('Empty Strings Are Not Valid!');
+      setTitle('Invalid Input!');
+      setMessage('Empty Strings Are Not Valid! You can leave the description blank');
       return;
     }
     const updatedShoe = {
@@ -16,10 +17,12 @@ const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage}) => {
       description: description.value || 'No description'
     };
     setIsLoading(true);
-    const update = await updateShoe(shoe.id, updatedShoe);
+    const update = await updateShoeReq(shoe.id, updatedShoe);
     setShoe(update);
-    setEditShoe(false);
     setIsLoading(false);
+    setEditShoe(false);
+    setTitle('Success!');
+    setMessage('Shoe Updated Successfully!');
   };
 
   return ( 

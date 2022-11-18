@@ -12,23 +12,24 @@ import Message from './components/utils/Message';
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [message, setMessage] = useState(null);
+  const [title, setTitle] = useState(null);
   return (
     <Fragment>
       <Header />
       {isLoading && <Spinner />}
-      {message && <Message messageContent={message} setMessage={setMessage} />}
+      {message && <Message messageContent={message} title={title} setMessage={setMessage} />}
       <Switch>
         <Route path='/' exact>
           <Home />
         </Route>
         <Route path='/shoes' exact>
-          <Shoes setIsLoading={setIsLoading} setMessage={setMessage}  />
+          <Shoes setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle}  />
         </Route>
         <Route path='/shoes/add' exact>
-          <AddShoe setIsLoading={setIsLoading} setMessage={setMessage}  />
+          <AddShoe setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle}  />
         </Route>
         <Route path='/shoes/:shoeID'>
-          <ShoeDetails setIsLoading={setIsLoading} setMessage={setMessage}  />
+          <ShoeDetails setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle}  />
         </Route>
         <Route path='*'>
           <NotFound />

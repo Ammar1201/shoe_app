@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getShoes } from "../api";
+import { getShoesReq } from "../api";
 import ShoeCard from "../components/ShoeCard";
 import classes from "./Shoes.module.css";
 
@@ -9,7 +9,7 @@ const Shoes = ({setIsLoading}) => {
   useEffect(() => {
     const getShoesData = async () => {
       setIsLoading(true);
-      const shoesData = await getShoes();
+      const shoesData = await getShoesReq();
       setShoes(shoesData);
       setIsLoading(false);
     };
