@@ -1,15 +1,19 @@
 import { updateShoe } from '../api';
 import classes from './EditShoe.module.css';
 
-const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading}) => {
+const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage}) => {
   const editHandler = async (event) => {
     event.preventDefault();
-    const { elements } = event.target;
+    const { name, picture, price, description } = event.target.elements;
+    if(!name.value.trim() || !picture.value.trim() || !price.value.trim()) {
+      setMessage('Empty Strings Are Not Valid!');
+      return;
+    }
     const updatedShoe = {
-      name: elements.name.value,
-      picture: elements.picture.value,
-      price: elements.price.value,
-      description: elements.description.value
+      name: name.value,
+      picture: picture.value,
+      price: price.value,
+      description: description.value || 'No description'
     };
     setIsLoading(true);
     const update = await updateShoe(shoe.id, updatedShoe);

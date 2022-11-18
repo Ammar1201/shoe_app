@@ -49,9 +49,13 @@ export const updateShoe = async (toUpdateId, shoe) => {
   }
 }
 
-export const deleteShoe = async () => {
+export const deleteShoe = async (toDeleteId) => {
   try {
-
+    const res = await axios({
+      method: 'delete',
+      url: `${baseUrl}${toDeleteId}`,
+    })
+    return res.data;
   }
   catch (error) {
     console.log(error);

@@ -12,7 +12,7 @@ import classes from './ShoeDetails.module.css';
 //   id: "1"
 // }
 
-const Shoe = ({setIsLoading}) => {
+const Shoe = ({setIsLoading, setMessage}) => {
   const { shoeID } = useParams();
   const [shoe, setShoe] = useState(null);
   const [editShoe, setEditShoe] = useState(false);
@@ -50,7 +50,7 @@ const Shoe = ({setIsLoading}) => {
           </div>
         </div> 
       </div>}
-      {shoe && editShoe && <EditShoe shoe={shoe} setShoe={setShoe} setEditShoe={setEditShoe} setIsLoading={setIsLoading} />}
+      {shoe && editShoe && <EditShoe shoe={shoe} setShoe={setShoe} setEditShoe={setEditShoe} setIsLoading={setIsLoading} setMessage={setMessage} />}
     </div> 
   );
 }
