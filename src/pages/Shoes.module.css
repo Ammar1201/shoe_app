@@ -11,7 +11,8 @@
 
 .shoesContainer {
   display: flex;
-  gap: 6.5rem;
+  /* column-gap: 2rem; */
+  row-gap: 2rem;
   flex-wrap: wrap;
 }
 
@@ -22,7 +23,7 @@
 
   .shoesContainer {
     flex-direction: column;
-    gap: 2rem;
+    /* gap: 2rem; */
     justify-content: center;
     align-items: center;
   }
@@ -36,7 +37,7 @@
 
   .shoesContainer {
     flex-direction: row;
-    gap: 10rem;
+    /* gap: 10rem; */
   }
 }
 
@@ -48,6 +49,6 @@
 
   .shoesContainer {
     flex-direction: row;
-    gap: 5rem;
+    /* gap: 5rem; */
   }
 }

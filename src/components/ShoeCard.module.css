@@ -1,5 +1,5 @@
 .card {
-  width: 400px;
+  min-width: 400px;
   height: 480px;
   border: 1px solid black;
   margin-left: 20px;
@@ -39,7 +39,7 @@
 
 @media (max-width: 768px) {
   .card {
-    width: 380px;
+    min-width: 380px;
     height: 480px;
     margin-right: 20px;
   }
