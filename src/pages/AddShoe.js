@@ -23,6 +23,7 @@ const AddShoe = ({setIsLoading, setMessage, setTitle}) => {
     setIsLoading(true);
     const add = await addShoeReq(addedShoe);
     if(add === null) {
+      setTitle('Error!');
       setMessage('something went wrong!');
       return;
     }

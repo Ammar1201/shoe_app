@@ -1,7 +1,7 @@
 import { updateShoeReq } from '../api';
-import classes from './EditShoe.module.css';
+import classes from './UpdateShoe.module.css';
 
-const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage, setTitle}) => {
+const EditShoe = ({shoe, setShoe, setUpdateShoe, setIsLoading, setMessage, setTitle}) => {
   const editHandler = async (event) => {
     event.preventDefault();
     const { name, picture, price, description } = event.target.elements;
@@ -19,12 +19,13 @@ const EditShoe = ({shoe, setShoe, setEditShoe, setIsLoading, setMessage, setTitl
     setIsLoading(true);
     const update = await updateShoeReq(shoe.id, updatedShoe);
     if(update === null) {
+      setTitle('Error!');
       setMessage('something went wrong!');
       return;
     }
     setShoe(update);
     setIsLoading(false);
-    setEditShoe(false);
+    setUpdateShoe(false);
     setTitle('Success!');
     setMessage('Shoe Updated Successfully!');
   };

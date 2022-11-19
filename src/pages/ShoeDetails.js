@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Route, Redirect } from 'react-router-dom';
 import { getShoeReq, deleteShoeReq } from '../api';
-import EditShoe from '../components/EditShoe';
+import UpdateShoe from '../components/UpdateShoe';
 import classes from './ShoeDetails.module.css';
 
 // const shoe = {
@@ -15,7 +15,7 @@ import classes from './ShoeDetails.module.css';
 const Shoe = ({setIsLoading, setMessage, setTitle}) => {
   const { shoeID } = useParams();
   const [shoe, setShoe] = useState(null);
-  const [editShoe, setEditShoe] = useState(false);
+  const [updateShoe, setUpdateShoe] = useState(false);
   const [deleteShoe, setDeleteShoe] = useState(false);
 
   useEffect(() => {
@@ -29,7 +29,7 @@ const Shoe = ({setIsLoading, setMessage, setTitle}) => {
   }, [shoeID, setIsLoading]);
 
   const editHandler = () => {
-    setEditShoe(true);
+    setUpdateShoe(true);
   };
 
   const deleteHandler = async () => {
@@ -47,8 +47,8 @@ const Shoe = ({setIsLoading, setMessage, setTitle}) => {
 
   return ( 
     <div>
-      {!editShoe && <h1 style={{textAlign: 'center'}}>Shoe Details</h1>}
-      {shoe && !editShoe && <div className={classes.container}>
+      {!updateShoe && <h1 style={{textAlign: 'center'}}>Shoe Details</h1>}
+      {shoe && !updateShoe && <div className={classes.container}>
         <div>
           <img src={shoe.picture} alt="shoe" />
         </div>
@@ -62,7 +62,7 @@ const Shoe = ({setIsLoading, setMessage, setTitle}) => {
           </div>
         </div> 
       </div>}
-      {shoe && editShoe && <EditShoe shoe={shoe} setShoe={setShoe} setEditShoe={setEditShoe} setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle} />}
+      {shoe && updateShoe && <UpdateShoe shoe={shoe} setShoe={setShoe} setUpdateShoe={setUpdateShoe} setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle} />}
       {deleteShoe && <Route><Redirect to='/shoes' /></Route>}
     </div> 
   );
