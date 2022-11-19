@@ -21,7 +21,7 @@
 }
 
 .info p {
-  width: 200px;
+  width: 300px;
 }
 
 .info h2 {
@@ -53,7 +53,7 @@
   }
 
   .info {
-    width: 200px;
+    width: 300px;
     height: 800px;
     text-align: center;
   }

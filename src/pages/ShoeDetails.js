@@ -57,7 +57,7 @@ const Shoe = ({setIsLoading, setMessage, setTitle}) => {
           <p>{shoe.description}</p>
           <h4>{shoe.price}$</h4>
           <div className={classes.btns}>
-            <button onClick={editHandler}>Edit</button>
+            <button onClick={editHandler}>Update</button>
             <button onClick={deleteHandler}>Delete</button>
           </div>
         </div> 

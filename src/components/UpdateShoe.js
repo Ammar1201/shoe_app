@@ -27,12 +27,12 @@ const EditShoe = ({shoe, setShoe, setUpdateShoe, setIsLoading, setMessage, setTi
     setIsLoading(false);
     setUpdateShoe(false);
     setTitle('Success!');
-    setMessage('Shoe Updated Successfully!');
+    setMessage('Shoe information Updated Successfully!');
   };
 
   return ( 
     <div className={classes.formContainer}>
-      <h1>Edit Shoe</h1>
+      <h1>Update Shoe</h1>
       <form className={classes.form} onSubmit={editHandler}>
         <div className={classes.formGroup}>
           <label>Name:</label>
@@ -44,13 +44,16 @@ const EditShoe = ({shoe, setShoe, setUpdateShoe, setIsLoading, setMessage, setTi
         </div>
         <div className={classes.formGroup}>
           <label>Price:</label>
-          <input name='price' type="text" defaultValue={shoe.price} />
+          <input name='price' type="number" step='any' defaultValue={shoe.price} />
         </div>
         <div className={classes.formGroup}>
           <label>Description:</label>
           <textarea name='description' cols="30" rows="10" defaultValue={shoe.description}></textarea>
         </div>
-        <input type="submit" value='Edit' />
+        <div className={classes.buttons}>
+          <button onClick={() => {setUpdateShoe(false)}} >Cancel</button>
+          <input type="submit" value='Update' />
+        </div>
       </form>
     </div> 
   );

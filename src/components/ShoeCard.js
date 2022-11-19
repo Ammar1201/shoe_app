@@ -14,7 +14,7 @@ const ShoeCard = ({shoe}) => {
     <div className={classes.card}>
       <h2>{shoe.name}</h2>
       <img src={shoe.picture} alt="shoe" />
-      <p>{shoe.description}</p>
+      <p className={classes.textCutoff}>{shoe.description}</p>
       <h4>{shoe.price}$</h4>
       <Link to={`/shoes/${shoe.id}`} >Show More</Link>
     </div> 

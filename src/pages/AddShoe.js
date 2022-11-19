@@ -47,7 +47,7 @@ const AddShoe = ({setIsLoading, setMessage, setTitle}) => {
         </div>
         <div className={classes.formGroup}>
           <label>Price:</label>
-          <input name='price' type="text" />
+          <input name='price' type="number" step='any' />
         </div>
         <div className={classes.formGroup}>
           <label>Description:</label>

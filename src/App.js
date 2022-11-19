@@ -23,7 +23,7 @@ const App = () => {
           <Home />
         </Route>
         <Route path='/shoes' exact>
-          <Shoes setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle}  />
+          <Shoes setIsLoading={setIsLoading} />
         </Route>
         <Route path='/shoes/add' exact>
           <AddShoe setIsLoading={setIsLoading} setMessage={setMessage} setTitle={setTitle}  />

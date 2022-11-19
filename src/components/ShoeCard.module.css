@@ -1,6 +1,6 @@
 .card {
   width: 400px;
-  min-height: 550px;
+  height: 480px;
   border: 1px solid black;
   margin-left: 20px;
   text-align: center;
@@ -29,10 +29,18 @@
   width: 350px;
 }
 
+.textCutoff {
+  --maxLines: 2;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--maxLines);
+}
+
 @media (max-width: 768px) {
   .card {
     width: 380px;
-    height: 550px;
+    height: 480px;
     margin-right: 20px;
   }
 }

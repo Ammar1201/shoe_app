@@ -24,3 +24,15 @@ h3,
 p {
   color: #042b5f;
 }
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  display: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  display: textfield;
+}
