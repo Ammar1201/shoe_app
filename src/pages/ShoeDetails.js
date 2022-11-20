@@ -47,7 +47,6 @@ const Shoe = ({setIsLoading, setMessage, setTitle}) => {
 
   return ( 
     <div>
-      {!shoe && <Route><Redirect to='/error' /></Route>}
       {!updateShoe && <h1 style={{textAlign: 'center'}}>Shoe Details</h1>}
       {shoe && !updateShoe && <div className={classes.container}>
         <div>

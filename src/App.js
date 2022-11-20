@@ -1,13 +1,13 @@
 import React, { Fragment, useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import Header from './components/Header';
-import NotFound from './components/NotFound';
 import AddShoe from './pages/AddShoe';
 import Home from './pages/Home';
 import ShoeDetails from './pages/ShoeDetails';
 import Shoes from './pages/Shoes';
 import Spinner from './components/utils/Spinner';
 import Message from './components/utils/Message';
+import NotFound from './components/utils/NotFound';
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(false);
